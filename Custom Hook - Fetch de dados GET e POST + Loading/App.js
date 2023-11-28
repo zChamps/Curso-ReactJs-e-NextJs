@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react"
 import './App.css';
 import {useFetch} from "./Hooks/useFetch"
+import {useFetchPOST} from "./Hooks/useFetchPOST"
 
 function App() {
 
@@ -14,9 +15,12 @@ function App() {
 
 
   //custom hook %% RECEBER DADOS
-  const {data: items} = useFetch(url)
-
-
+  const {data: items, loading} = useFetch(url) /////// UTILIZANDO O CUSTOM HOOK PARA GET
+  useEffect(() => {
+    setProdutos(items)
+  }, [items])
+  
+  const {httpConfig} = useFetchPOST(url)
 
 
 
@@ -30,19 +34,29 @@ function App() {
       price: price
     }
 
-    console.log(produto)
-
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(produto),
+    // const res = await fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify(produto),
       
-    })
-    // carregamento dinamico dos itens
-    const novoProduto = await res.json()
-    setProdutos(produtosAnteriores => [...produtosAnteriores, novoProduto])
+    // })
+    // // carregamento dinamico dos itens
+    // const novoProduto = await res.json()
+    // setProdutos(produtosAnteriores => [...produtosAnteriores, novoProduto])
+
+    // const res = await fetch(url, httpConfig && httpConfig(produto, "POST"))
+    //   // carregamento dinamico dos itens
+    //   const novoProduto = await res.json()
+    //   setProdutos(produtosAnteriores => [...produtosAnteriores, novoProduto])
+
+    httpConfig(produto, "POST")
+    setProdutos(produtosAnteriores => [...produtosAnteriores, produto])     /////// UTILIZANDO O CUSTOM HOOK PARA POST
+
+
+
+
     setNome("")
     setPreco("")
   }
@@ -52,8 +66,9 @@ function App() {
   return (
     <div className="App">
         <h1>teste</h1>
-
-        {items && items.map(produto => {
+        
+        {loading && <p>Carregando dados!!</p>} {/* ////////////ESTADO DE LOADING */}
+        {produtos && produtos.map(produto => {
           return <p key={produto.id}>Nome: {produto.name}, Preço: {produto.price}</p>
         })}
 
