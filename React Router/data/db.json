@@ -2,13 +2,78 @@
   "products": [
     {
       "id": 1,
-      "name": "Camisa",
-      "price": 59.9
-    },
-    {
+      "name": "Camisa Azul",
+      "price": 29.99
+  },
+  {
       "id": 2,
-      "name": "Calça vermelha",
-      "price": 90
-    }
+      "name": "Calça Jeans",
+      "price": 45.5
+  },
+  {
+      "id": 3,
+      "name": "Jaqueta",
+      "price": 39.99
+  },
+  {
+      "id": 4,
+      "name": "Tênis Esportivo",
+      "price": 79.99
+  },
+  {
+      "id": 5,
+      "name": "Boné",
+      "price": 12.99
+  },
+  {
+      "id": 6,
+      "name": "Sapato Social",
+      "price": 59.99
+  },
+  {
+      "id": 7,
+      "name": "Bermuda",
+      "price": 22.5
+  },
+  {
+      "id": 8,
+      "name": "Blusa de Frio",
+      "price": 49.99
+  },
+  {
+      "id": 9,
+      "name": "Meia",
+      "price": 5.99
+  },
+  {
+      "id": 10,
+      "name": "Cinto de Couro",
+      "price": 14.99
+  },
+  {
+      "id": 11,
+      "name": "Óculos de Sol",
+      "price": 29.99
+  },
+  {
+      "id": 12,
+      "name": "Relógio",
+      "price": 69.99
+  },
+  {
+      "id": 13,
+      "name": "Mochila",
+      "price": 34.99
+  },
+  {
+      "id": 14,
+      "name": "Chapéu",
+      "price": 19.99
+  },
+  {
+      "id": 15,
+      "name": "Luvas",
+      "price": 9.99
+  }
   ]
 }
