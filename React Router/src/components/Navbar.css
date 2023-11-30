@@ -1,13 +1,21 @@
-*{
-    text-decoration: none;
-}
-
-nav{
+nav {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 15px;
-    font-weight: bold;
-    color: black;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    padding: 5px;
     text-decoration: none;
-}
+    color: #000;
+  }
+  
+  nav a:hover {
+    color: #ccc;
+  }
+  
+  /* Classe que realiza a alteração de estilos quando estamos na pagina ativa dentro do menu */
+  .active {
+    background-color: #000;
+    color: #fff;
+  }

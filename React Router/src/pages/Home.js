@@ -11,6 +11,7 @@ const Home = () => {
     <div>
     <h1>Home</h1>
     {error && <p>{error}</p>}
+    {loading && <p>Carregando!</p>}
     {/* Importando dados de forma dinamica em uma pagina da rota */}
     <ul className="products">
         {items && items.map(item => {
