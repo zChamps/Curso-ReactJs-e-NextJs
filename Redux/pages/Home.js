@@ -15,6 +15,8 @@ export default function App() {
   console.log(count)
   return (
     <div>
+      <h1>HOME</h1>
+      <span>{count}</span>
       <div>
         <button
           aria-label="Increment value"
@@ -22,7 +24,6 @@ export default function App() {
         >
           Increment
         </button>
-        <span>{count}</span>
         <button
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
